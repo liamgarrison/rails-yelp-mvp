@@ -1,7 +1,15 @@
 <h1><%= @restaurant.name %></h1>
-<h2>Address:</h2>
+<h3>Address:</h3>
 <p><%= @restaurant.address %></p>
-<h2>Phone number:</h2>
+<h3>Phone number:</h3>
 <p><%= @restaurant.phone_number %></p>
-<h2>Category:</h2>
+<h3>Category:</h3>
 <p><%= @restaurant.category %></p>
+
+<h2>Reviews</h2>
+
+<% @restaurant.reviews do |review| %>
+  <%= review.content %>
+  <%= review.rating %>
+<% end %>
+
