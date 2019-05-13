@@ -9,6 +9,7 @@
 <h2>Reviews</h2>
 <% if @restaurant.reviews.empty? %>
   <p>No reviews yet!</p>
+<% else %>
   <% @restaurant.reviews.each do |review| %>
     <li>
       <%= review.content %>
