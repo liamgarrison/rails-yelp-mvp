@@ -36,6 +36,32 @@ restaurants = [
   }
 ]
 
+reviews = [
+  {
+    content: "Really fun for the kids",
+    rating: "3"
+  },
+  {
+    content: "Great stuff!",
+    rating: "4"
+  },
+  {
+    content: "I love this place so much",
+    rating: "5"
+  },
+  {
+    content: "Pretty poor experience",
+    rating: "2"
+  }
+]
+
 # Enter the restaurants in the db
 Restaurant.create(restaurants)
 puts "Added restaurants"
+
+# Add reviews in to the restaurants
+Restaurant.all.each do |restaurant|
+  restaurant.reviews = Review.create(reviews)
+  restaurant.save
+end
+puts "Added reviews"
